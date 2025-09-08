@@ -4,21 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Feedback</title>
 
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script/modal.js" defer> </script>
     <script src="script/validation.js" defer> </script>
+    <script src="script/mini.js" defer> </script>
 
 </head>
 
 <body>
+    <header>
+        <a href="/">Лого</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+        <p>Телефон +71223344354</p>
+        <p>РТУ МИРЭА</p>
+        <p>Email: pizza123@gmail.com</p>
+        <p>Режим работы: от зари до зари</p>
+    </main>
     <a href="index.html" class="Glav">ГЛАВНАЯ</a>
 
     <!-- Кнопка открытия модалки -->
     <button id="openDialog" type="button">Написать нам</button>
     <!-- Модалка с формой -->
-    <dialog id="contactDialog" aria-labelledby="dialogTitle">
+    <dialog  id="contactDialog" aria-labelledby="dialogTitle">
         <h2 id="dialogTitle">Обратная связь</h2>
         <form id="contactForm" method="dialog" novalidate>
             <label for="name">Имя</label>
@@ -45,6 +63,10 @@
             </div>
         </form>
     </dialog>
+    <footer>
+        <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+    </footer>
 
 
     <script></script>

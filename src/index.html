@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +9,42 @@
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
+    <script src="script/mini.js" defer> </script>
+
 </head>
+
 <body>
     <header>
         <a href="/">Лого</a>
         <nav>
             <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="register.html">Обратная связь</a></li>
+                <li><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li><a class="site-nav__link" href="about.html">О нас</a></li>
+                <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                <li><a class="site-nav__link" href="register.html">Обратная связь</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Добро пожаловать на наш сайт!</h1>
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+
+        <img src="img/card-640.jpg" alt="Проект: макет мобильного приложения" width="640" height="360" loading="lazy"
+            decoding="async">
+
+
+
+
 
         <!-- Секция 1 с якорем -->
-        <section id="services">
+        <section class="section" id="services">
             <h2>Наши услуги</h2>
             <p>Описание предоставляемых услуг...</p>
             <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
         </section>
 
         <!-- Секция 2 с якорем -->
-        <section id="portfolio">
+        <section class="section" id="portfolio">
             <h2>Портфолио</h2>
             <p>Примеры наших работ...</p>
         </section>
@@ -43,6 +55,13 @@
             <p>Наши контакты...</p>
             <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
         </section>
+
+
+        <iframe width="720" height="405" src="https://rutube.ru/play/embed/833e8be546d6ba6866b89bf39a0931cb"
+            frameBorder="0" allow="clipboard-write; autoplay" allowFullScreen></iframe>
+
+
+
     </main>
 
     <h1 class="colorText1">Ура</h1>
@@ -57,6 +76,7 @@
         <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
         <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
-    
+
 </body>
+
 </html>

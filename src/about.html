@@ -6,6 +6,8 @@
     <meta name="description" content="Краткое описание о нас страницы сайта">
     <title>О нас</title>
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script/mini.js" defer> </script>
 </head>
 <body>
     <header>
@@ -19,11 +21,14 @@
         </nav>
     </header>
     <main>
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
         <!-- Простые "хлебные крошки" -->
         <nav aria-label="Хлебные крошки">
             <a href="index.html">Главная</a> →
             <span>О нас</span>
         </nav>
+
+        <img src="img/card-640.jpg" srcset="img/card-640.jpg 640w, img/card-960.jpg 960w, img/card-1280.jpg1280w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px" alt="Проект: макет мобильного приложения" loading="lazy">
 
         <h1>О нашей компании</h1>
         <section>
