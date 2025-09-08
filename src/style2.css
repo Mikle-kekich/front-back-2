@@ -1,0 +1,15 @@
+dialog {
+    padding: 1.25rem;
+    border: none;
+    border-radius: 12px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, .5);
+}
+
+.form-actions {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+}
