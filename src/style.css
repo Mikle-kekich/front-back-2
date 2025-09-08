@@ -273,3 +273,9 @@ body.theme-dark {
     border: 0;
     border-radius: var(--radius);
 }
+
+
+.theme-toggle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
