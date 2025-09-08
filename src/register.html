@@ -7,7 +7,8 @@
     <title>Register</title>
 
     <link rel="stylesheet" href="style2.css">
-    <script src="script/modal.js" defer></script>
+    <script src="script/modal.js" defer> </script>
+    <script src="script/validation.js" defer> </script>
 
 </head>
 
@@ -37,8 +38,8 @@
             <label for="message">Сообщение</label>
             <textarea id="message" name="message" rows="4" required></textarea>
             <div class="form-actions">
-                <button type="button" id="closeDialog">Закрыть</button>
-                <button type="submit">Отправить</button>
+                <button type="button" id="closeDialog" class="close">Закрыть</button>
+                <button type="submit" class="submut">Отправить</button>
             </div>
         </form>
     </dialog>
