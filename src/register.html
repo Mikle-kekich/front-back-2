@@ -14,55 +14,59 @@
 </head>
 
 <body>
-    <header>
-        <a href="/">Лого</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container_header">
+            <a href="/" class="logo">Лого</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="about.html">О нас</a></li>
+                    <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                    <li class="nav__item"><a class="nav__link" href="register.html">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="main">
         <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
         <p>Телефон +71223344354</p>
         <p>РТУ МИРЭА</p>
         <p>Email: pizza123@gmail.com</p>
         <p>Режим работы: от зари до зари</p>
     </main>
-    <a href="index.html" class="Glav">ГЛАВНАЯ</a>
+    <div class="reg_div">
+        <!-- Кнопка открытия модалки -->
+        <button id="openDialog" type="button">Написать нам</button>
+        <!-- Модалка с формой -->
+        <dialog  id="contactDialog" aria-labelledby="dialogTitle">
+            <h2 id="dialogTitle">Обратная связь</h2>
+            <form class="form" id="contactForm" method="dialog" novalidate>
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp"
+                    placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+                <label for="date">Дата</label>
+                <input id="date" name="date" type="date">
+                <label for="topic">Тема</label>
+                <select id="topic" name="topic" required>
+                    <option value="">Выберите тему</option>
+                    <option>Вопрос</option>
+                    <option>Заказ</option>
+                </select>
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <div class="form-actions">
+                    <button type="button" id="closeDialog" class="close">Закрыть</button>
+                    <button type="submit" class="submut">Отправить</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
 
-    <!-- Кнопка открытия модалки -->
-    <button id="openDialog" type="button">Написать нам</button>
-    <!-- Модалка с формой -->
-    <dialog  id="contactDialog" aria-labelledby="dialogTitle">
-        <h2 id="dialogTitle">Обратная связь</h2>
-        <form id="contactForm" method="dialog" novalidate>
-            <label for="name">Имя</label>
-            <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" required autocomplete="email">
-            <label for="phone">Телефон</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp"
-                placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
-            <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-            <label for="date">Дата</label>
-            <input id="date" name="date" type="date">
-            <label for="topic">Тема</label>
-            <select id="topic" name="topic" required>
-                <option value="">Выберите тему</option>
-                <option>Вопрос</option>
-                <option>Заказ</option>
-            </select>
-            <label for="message">Сообщение</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <div class="form-actions">
-                <button type="button" id="closeDialog" class="close">Закрыть</button>
-                <button type="submit" class="submut">Отправить</button>
-            </div>
-        </form>
-    </dialog>
     <footer>
         <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
         <p>Телефон: +7 (123) 456-78-90</p>

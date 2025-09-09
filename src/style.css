@@ -1,43 +1,215 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-
-p {
-    color: rgb(220, 21, 21);
+html {
+    scroll-behavior: smooth;
+    color-scheme: light;
 }
 
-.colorText1 {
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    /* Colors */
+    --color-bg: #fff;
+    --color-fg: #0b0b0b;
+    --color-muted: #666;
+    --color-primary: #0a84ff;
+    --color-danger: #b00020;
+    --color-text-red: rgb(220, 21, 21);
+    
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2.5rem;
+    --space-6: 4rem;
+    
+    /* Typography */
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    
+    /* Borders & Shadows */
+    --radius: 12px;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 8px 24px rgba(0, 0, 0, .08);
+    
+    /* Container */
+    --container-width: min(100% - 2 * var(--space-4), 1120px);
+}
+
+/* Dark theme */
+body.theme-dark {
+    --color-bg: #0b0b0b;
+    --color-fg: #f5f5f5;
+    --color-muted: #aaa;
+    --color-primary: #6aa2ff;
+    color-scheme: dark;
+}
+
+/* ===== LAYOUT COMPONENTS ===== */
+.container {
+    width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--space-3);
+}
+
+/* Header */
+.header {
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-muted);
+    padding: var(--space-3) 0;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-fg);
+}
+
+/* Navigation */
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: var(--space-4);
+}
+
+.nav__link {
+    color: var(--color-fg);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+}
+
+.nav__link:hover,
+.nav__link--active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    padding: var(--space-5) 0;
+}
+
+/* Sections */
+.section {
+    padding: var(--space-5) 0;
+}
+
+.section__title {
+    margin-bottom: var(--space-3);
+    font-size: 2rem;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: var(--space-6) 0;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.hero__image {
+    margin: var(--space-4) auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Media container */
+.media {
+    aspect-ratio: 16/9;
+    width: min(100%, 960px);
+    margin: var(--space-5) auto;
+}
+
+.media iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: var(--radius);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.button:hover {
+    filter: brightness(0.95);
+}
+
+.theme-toggle {
+    margin: var(--space-3) 0;
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* Content example */
+.content-example {
+    margin: var(--space-5) 0;
+}
+
+.color-text {
+    color: var(--color-text-red);
     font-size: large;
     font-weight: bold;
-
+    margin-bottom: var(--space-2);
 }
 
-#newSt {
-    color: brown;
-    font-size: small;
-    text-decoration: overline;
+#new-st {
+    color: var(--color-primary);
 }
 
-/* БАЗА: читаемость и предсказуемость размеров */
-
-html,
-body {
-    margin: 0;
-    padding: 0;
+/* Footer */
+.footer {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-muted);
+    padding: var(--space-4) 0;
+    text-align: center;
 }
 
-body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-        sans-serif;
-    line-height: 1.5;
-}
-
-/* Формы: размеры, отступы, визуальный порядок */
+/* ===== FORM STYLES ===== */
 label {
     display: block;
-    margin: 0.5rem 0 0.25rem;
+    margin: var(--space-2) 0 var(--space-1);
 }
 
 input,
@@ -46,169 +218,53 @@ textarea,
 button {
     width: 100%;
     max-width: 480px;
-    padding: .5rem .75rem;
+    padding: var(--space-2) var(--space-3);
     border: 1px solid #c8c8c8;
-    border-radius: 8px;
-    background: #fff;
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    font: inherit;
+    color: inherit;
 }
 
-/* Кнопка по умолчанию */
 button,
 [type="submit"] {
-    background: #0a84ff;
-    color: #fff;
+    background: var(--color-primary);
+    color: white;
     border: none;
     cursor: pointer;
 }
 
-/* Состояния: клавиатура/мышь/ошибки */
-:where(input, select, textarea, button):focus-visible {
-    outline: 2px solid #0a84ff;
-    outline-offset: 2px;
-}
-
-button:hover {
-    filter: brightness(0.95);
-}
-
-:disabled,
-[aria-disabled="true"] {
-    opacity: .6;
-    cursor: not-allowed;
-}
-
-/* Подсветка ошибочных полей (установите aria-invalid="true") */
-[aria-invalid="true"] {
-    border-color: #b00020;
-}
-
-.submut,
-.close {
-    margin-top: 10px;
-}
-
-.Glav {
-    margin-right: 25px;
-}
-
-dialog {
-    position: fixed;
-    left: 40%;
-    top: 10%;
-}
-
-:root {
-    /* Палитра */
-    --color-bg: #fff;
-    --color-fg: #0b0b0b;
-    --color-muted: #666;
-    --color-primary: #0a84ff;
-    --color-danger: #b00020;
-    /* Типографика и размеры */
-    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 16px;
-    --space-4: 24px;
-    --space5: 40px;
-    /* Скругления и тени */
-    --radius: 12px;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 8px 24px rgba(0, 0, 0, .08);
-}
-
-/* Тёмная тема: переопределяем только значения токенов */
-body.theme-dark {
-    --color-bg: #0b0b0b;
-    --color-fg: #f5f5f5;
-    --color-muted: #aaa;
-    --color-primary: #6aa2ff;
-}
-
-
-/* :where(...) не добавляет специфичности — проще переопределять позже */
+/* Focus states */
 :where(a, button, input, select, textarea):focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Недоступные элементы визуально «приглушаем» */
+/* Disabled states */
 :disabled,
 [aria-disabled="true"] {
-    opacity: .6;
+    opacity: 0.6;
     cursor: not-allowed;
 }
 
-
-
-html {
-    scroll-behavior: smooth;
+/* Invalid fields */
+[aria-invalid="true"] {
+    border-color: var(--color-danger);
 }
 
-/* Плавная прокрутка к #якорю */
+/* Target highlighting */
 :target {
     outline: 2px dashed var(--color-primary);
-    outline-offset: 4px;
+    outline-offset: var(--space-2);
 }
 
-/*
-Подсветка цели */
-
-/* Reset-минимум — подробнее в 1.8 */
-* {
-    box-sizing: border-box;
+/* ===== UTILITY CLASSES ===== */
+.submit,
+.close {
+    margin-top: var(--space-3);
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: var(--color-bg);
-    color: var(--color-fg);
-    font-family: var(--font-body);
-    line-height: 1.5;
-}
-
-/* Центровка и ограничение ширины контейнера */
-.container {
-    width: min(100% - 2*var(--space-4), 1120px);
-    margin-inline: auto;
-}
-
-/* Вертикальные отступы секций по токенам */
-.section {
-    padding-block: var(--space-5);
-}
-
-.section__title {
-    margin: 0 0 var(--space-3);
-}
-
-
-
-
-/* Хорошо: опора на БЭМ-класс компонента */
-.site-nav__link {
-    color: var(--color-fg);
-    text-decoration: none;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* Проще считать ширины/высоты */
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Убираем стартовые отступы браузера */
-
-/* Медиа не «выпрыгивают» из контейнеров */
+/* ===== IMAGE & MEDIA DEFAULTS ===== */
 img,
 video {
     max-width: 100%;
@@ -216,66 +272,66 @@ video {
     display: block;
 }
 
-/* Форм-контролы наследуют шрифт и цвет */
-button,
-input,
-select,
-textarea {
-    font: inherit;
-    color: inherit;
-}
-
-:root {
-    color-scheme: light;
-}
-
-/* Светлые скроллбары/контролы по
-умолчанию */
-body.theme-dark {
-    color-scheme: dark;
-}
-
-/* Тёмные — при активной теме */
-
-
-.hero {
-    background:
-        linear-gradient(to top, rgba(0, 0, 0, .55), rgba(0, 0, 0, .15)),
-        /* оверлей для
-контраста текста */
-        url("img/hero-1920.jpg") center/cover no-repeat;
-    /* картинка
-как декор */
-    color: #fff;
-    padding: clamp(2rem, 6vw, 6rem) 1rem;
-    /* адаптивные
-отступы */
-    border-radius: var(--radius);
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .nav__list {
+        flex-direction: column;
+        gap: var(--space-2);
+        text-align: center;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .section__title {
+        font-size: 1.5rem;
+    }
 }
 
 
-/* Контейнер с фиксированным соотношением сторон для <iframe>/<video> */
-.media {
-    aspect-ratio: 16/9;
-    /* удерживаем пропорцию блока */
-    width: min(100%, 960px);
-    /* не шире 960px, но адаптивен */
-    margin-inline: auto;
-    /* центрируем блок */
-}
 
-.media iframe,
-.media video {
-    width: 100%;
-    height: 100%;
-    /* медиа занимает всю площадь контейнера
-*/
-    border: 0;
-    border-radius: var(--radius);
+
+
+
+.container_header{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
-.theme-toggle{
-    margin-top: 10px;
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reg_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.close{
     margin-bottom: 10px;
 }
+
+.submut{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
