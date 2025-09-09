@@ -10,17 +10,20 @@
     <script src="script/mini.js" defer> </script>
 </head>
 <body>
-    <header>
-        <a href="/">Лого</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container_header">
+            <a href="/" class="logo">Лого</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="about.html">О нас</a></li>
+                    <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                    <li class="nav__item"><a class="nav__link" href="register.html">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="main">
         <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
         <!-- Простые "хлебные крошки" -->
         <nav aria-label="Хлебные крошки">
