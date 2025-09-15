@@ -29,7 +29,7 @@ body {
     --color-primary: #0a84ff;
     --color-danger: #b00020;
     --color-text-red: rgb(220, 21, 21);
-    
+
     /* Spacing */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
@@ -37,14 +37,14 @@ body {
     --space-4: 1.5rem;
     --space-5: 2.5rem;
     --space-6: 4rem;
-    
+
     /* Typography */
     --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    
+
     /* Borders & Shadows */
     --radius: 12px;
     --shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 8px 24px rgba(0, 0, 0, .08);
-    
+
     /* Container */
     --container-width: min(100% - 2 * var(--space-4), 1120px);
 }
@@ -278,17 +278,17 @@ video {
         flex-direction: column;
         gap: var(--space-3);
     }
-    
+
     .nav__list {
         flex-direction: column;
         gap: var(--space-2);
         text-align: center;
     }
-    
+
     .hero__title {
         font-size: 2rem;
     }
-    
+
     .section__title {
         font-size: 1.5rem;
     }
@@ -299,7 +299,7 @@ video {
 
 
 
-.container_header{
+.container_header {
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
@@ -308,38 +308,72 @@ video {
 }
 
 
-.main{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.reg_div{
+.reg_div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.close{
+.close {
     margin-bottom: 10px;
 }
 
-.submut{
+.submut {
     margin-bottom: 10px;
 }
 
 
 
 .section2,
-.section{
+.section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.button{
+.button {
     margin-top: 20px;
+}
+
+dialog {
+    padding: 1.25rem;
+    border: none;
+    border-radius: 12px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, .5);
+}
+
+.form-actions {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+
+
+
+
+dialog{
+    border: none;
+    position: fixed;
+    left: 35%;
+    top: 5%;
+
+}
+
+.submut,
+.close{
+    height: 41px;
+    margin-top: 18px;
 }
